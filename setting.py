@@ -14,6 +14,7 @@ from termcolor import colored
 with open('commu.json') as json_data_file:
     conf = json.load(json_data_file)
 
+
 user = 'Admin'
 password = 'Admin0000'
 
@@ -139,7 +140,7 @@ def week():
 
 def SELECT(Device_ID):
     for i in range(len(conf)):
-        if(conf[i]["Device_ID"] == Device_ID):
+        if(conf[i]['Device_ID'] == Device_ID):
             return conf[i]["IP"]
 
 def run(device_input,start_input,end_input):
@@ -148,10 +149,12 @@ def run(device_input,start_input,end_input):
     # print(start_time,end_time)
     POST(IP,switch,start_time,end_time)
 
-print(colored("[Building]_[Floor]_[Number]",'yellow'))
-device_input = input("Device ID : ")
-print(colored("[HOUR]:[MIN]",'yellow'))
-start_input = input("Start Time : ")
-print(colored("[HOUR]:[MIN]",'yellow'))
-end_input = input("End Time : ")
-run(device_input,start_input,end_input)
+#print(colored("[Building]_[Floor]_[Number]",'yellow'))
+#device_input = input("Device ID : ")
+#print(colored("[HOUR]:[MIN]",'yellow'))
+#start_input = input("Start Time : ")
+#print(colored("[HOUR]:[MIN]",'yellow'))
+#end_input = input("End Time : ")
+
+if __name__ == '__main__':
+    run(device_input,start_input,end_input)
